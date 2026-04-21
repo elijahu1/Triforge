@@ -1,8 +1,13 @@
 iac-project
 /compute/triforge-key.pem
-tf-apply.png
-tf-init.png
-tf-destroy.png
-pulumi-up.png
-pulumi-destroy.png
+*.png
 
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
