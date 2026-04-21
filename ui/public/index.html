@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hypa AI Demo</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+
+            <div class="status-bar" id="status-bar">
+                <span id="status">Ready</span>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message ai-message">
+                    <div class="message-content">
+                        👋 Try these:<br><br>
+                        <strong>translate hello to yoruba</strong><br>
+                        <strong>translate good morning to igbo</strong><br>
+                        <strong>speak hello in hausa</strong><br><br>
+                        Or tap any word in a response to translate it.
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input
+                        type="text"
+                        id="message-input"
+                        placeholder="Type a command..."
+                        onkeypress="if(event.key==='Enter') sendMessage()"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                    >
+                    <button class="mic-btn" id="mic-btn"
+                        onmousedown="startVoice()"
+                        onmouseup="stopVoice()"
+                        ontouchstart="event.preventDefault(); startVoice()"
+                        ontouchend="event.preventDefault(); stopVoice()">
+                        <span id="mic-icon">🎤</span>
+                    </button>
+                    <button class="send-btn" id="send-btn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

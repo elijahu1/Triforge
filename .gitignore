@@ -1,0 +1,8 @@
+iac-project
+/compute/triforge-key.pem
+tf-apply.png
+tf-init.png
+tf-destroy.png
+pulumi-up.png
+pulumi-destroy.png
+
