@@ -21,7 +21,7 @@ resource "aws_instance" "app_server" {
   ami = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.triforge.id]
-  associate_public_ip_address = true
+  # associate_public_ip_address = true using EIP so don't need this no more
   key_name = "triforge-key"
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
 
@@ -29,6 +29,22 @@ tags = {
   Name = "triforge"
 
   }
+}
+
+## ELASTIC IP
+
+resource "aws_eip" "triforge_eip" {
+  instance = aws_instance.app_server.id
+  domain   = "vpc"
+
+
+  tags = {
+    Name = "triforge-eip"
+  }
+}
+
+  output "ec2_public_ip" {
+  value = aws_eip.triforge_eip.public_ip
 }
 
 

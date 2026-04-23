@@ -60,9 +60,11 @@ cd compute && tf init && tf apply
 
 ## Blog
 
-*Coming soon @ [triforge](https://dub.sh/triforge)*
+*Blog Coming soon @ [triforge](https://dub.sh/triforge)*
 
 *Github @ [Triforge-Code](https://git.new/triforge)*
+
+*AI Chat interface @ [Triforge-chat](https://chat.elijahu.me)*
 
 ---
 
