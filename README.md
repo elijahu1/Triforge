@@ -16,7 +16,7 @@ Flask (Python)      → Proxy server bridging UI ↔ SageMaker
 
 **State backend:** S3 (`remote-state-h1`)  
 **Config passing:** AWS Secrets Manager → Flask → UI  
-**Model:** `openai/whisper-small` via HuggingFace inference container
+**Model:** [`openai/whisper-small`](https://huggingface.co/openai/whisper-small) via HuggingFace inference container
 
 ## Why 3 Tools?
 
@@ -60,7 +60,7 @@ cd compute && tf init && tf apply
 
 ## Blog
 
-*Coming soon at dub.sh/triforge*
+*Coming soon at [triforge](https://dub.sh/triforge)*
 
 ---
 
