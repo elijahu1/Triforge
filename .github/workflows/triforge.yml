@@ -19,9 +19,12 @@ jobs:
       - name: Add Pulumi to PATH
         run: echo "$HOME/.pulumi/bin" >> $GITHUB_PATH
 
-      - name: Install opentofu
-        run: |
-          sudo apt-get install -y opentofu
+      - name: Setup OpenTofu
+        uses: opentofu/setup-opentofu@v2
+
+      - name: Verify OpenTofu
+        run: tofu version
+          
       
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
