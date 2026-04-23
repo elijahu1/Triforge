@@ -17,6 +17,7 @@ iac-project
 # Terraform
 .terraform/
 *.tfstate
+*.tfstate.backup
 *.tfstate.*
 crash.log
 override.tf
