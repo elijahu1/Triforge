@@ -60,7 +60,8 @@ cd compute && tf init && tf apply
 
 ## Blog
 
-*Coming soon at [triforge](https://dub.sh/triforge)*
+*Coming soon @ [triforge](https://dub.sh/triforge)*
+*Github @ [Triforge-Code](https://git.new/triforge)*
 
 ---
 
