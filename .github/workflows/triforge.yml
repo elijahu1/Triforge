@@ -33,7 +33,7 @@ jobs:
       
       - name: Check all env are setup 
         run: |
-          pulumi -v 
+          pulumi version 
           tofu -v 
           terraform -v 
 
