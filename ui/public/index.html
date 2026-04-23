@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hypa AI Demo</title>
+    <title>Whisper Transcriber</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <div class="container">
         <div class="chat-container">
-
             <div class="status-bar" id="status-bar">
                 <span id="status">Ready</span>
             </div>
-
             <div class="chat-messages" id="chat-messages">
                 <div class="message ai-message">
                     <div class="message-content">
-                        👋 Try these:<br><br>
-                        <strong>translate hello to yoruba</strong><br>
-                        <strong>translate good morning to igbo</strong><br>
-                        <strong>speak hello in hausa</strong><br><br>
-                        Or tap any word in a response to translate it.
+                        👋 Welcome to Whisper Transcriber<br><br>
+                        Press and hold 🎤 to record your voice<br>
+                        Release to transcribe<br><br>
+                        <strong>Best accuracy:</strong> English<br>
+                        <strong>Also supported:</strong> French, Spanish, Arabic, and more<br><br>
+                        Your speech will be converted to text in seconds.
                     </div>
                 </div>
             </div>
-
             <div class="chat-input-container">
                 <div class="input-wrapper">
                     <input
                         type="text"
                         id="message-input"
-                        placeholder="Type a command..."
+                        placeholder="Or type your message here..."
                         onkeypress="if(event.key==='Enter') sendMessage()"
                         autocomplete="off"
                         autocorrect="off"
@@ -48,10 +46,8 @@
                     <button class="send-btn" id="send-btn" onclick="sendMessage()">Send</button>
                 </div>
             </div>
-
         </div>
     </div>
-
     <script src="/script.js"></script>
 </body>
 </html>
