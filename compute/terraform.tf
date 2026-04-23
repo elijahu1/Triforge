@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket         = "remote-state-h1"
-    key            = "terraform.tfstate"
+    key            = "compute/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
   }
