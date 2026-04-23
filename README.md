@@ -23,7 +23,7 @@ Flask (Python)      → Proxy server bridging UI ↔ SageMaker
 Each tool owns a layer that suits its philosophy:
 - **Pulumi** — Python flexibility for SageMaker's complex conditional resources
 - **Terraform** — battle-tested HCL for standard compute provisioning
-- **OpenTofu** — FOSS Terraform fork managing shared state infrastructure
+- **OpenTofu** — FOSS Terraform fork managing shared state infrastructure (i honestly just wanted to try it out as it looked kinda cool)
 
 ## Structure
 
@@ -60,7 +60,7 @@ cd compute && tf init && tf apply
 
 ## Blog
 
-*Blog Coming soon @ [triforge](https://dub.sh/triforge)*
+*Blog @ [triforge](https://dub.sh/triforge)*
 
 *Github @ [Triforge-Code](https://git.new/triforge)*
 
