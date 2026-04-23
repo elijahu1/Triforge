@@ -104,19 +104,7 @@ jobs:
             git pull origin main
 
             echo "Setting up nginx config and linking"
-            sudo tee /etc/nginx/sites-available/triforge << 'EOF'
-server {
-    listen 80;
-    server_name chat.elijahu.me;
-    
-    location / {
-        proxy_pass http://127.0.0.1:5000;
-        proxy_set_header Host $$host;
-        proxy_set_header X-Real-IP $$remote_addr;
-    }
-}
-EOF
-
+            sudo cp /home/ubuntu/Triforge/ui/triforge.nginx.conf /etc/nginx/sites-available/triforge
             sudo ln -sf /etc/nginx/sites-available/triforge /etc/nginx/sites-enabled/
             sudo nginx -t
             sudo nginx -s reload
