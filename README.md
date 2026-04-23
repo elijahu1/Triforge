@@ -61,8 +61,8 @@ cd compute && tf init && tf apply
 ## Blog
 
 *Coming soon @ [triforge](https://dub.sh/triforge)*
+
 *Github @ [Triforge-Code](https://git.new/triforge)*
 
 ---
 
-GitHub description: **Multi-tool IaC pipeline deploying Whisper AI on AWS — Pulumi, Terraform, and OpenTofu each owning an isolated infrastructure layer.**
