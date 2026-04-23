@@ -21,7 +21,7 @@ jobs:
 
       - name: Install opentofu
         run: |
-          curl -fsSL https://get.opentofu.org/install-opentofu.sh | sh
+          sudo apt install -y tofu
       
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
