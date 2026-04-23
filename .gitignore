@@ -1,6 +1,18 @@
+# Project folder (if needed)
 iac-project
-/compute/triforge-key.pem
+
+# Keys / secrets
+*.pem
+*.key
+
+# Optional: specific compute key (if you want extra safety)
+ /compute/triforge-key.pem
+
+# Images / assets
 *.png
+*.jpg
+*.jpeg
+*.gif
 
 # Terraform
 .terraform/
@@ -11,3 +23,6 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
+
+# Terraform lock file (optional but usually COMMITTED)
+.terraform.lock.hcl

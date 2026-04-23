@@ -35,7 +35,11 @@ sagemaker_model = aws.sagemaker.Model(
     execution_role_arn=sagemaker_role.arn,
     primary_container=aws.sagemaker.ModelPrimaryContainerArgs(
     image="763104351884.dkr.ecr.us-east-1.amazonaws.com/huggingface-pytorch-inference:2.1.0-transformers4.37.0-cpu-py310-ubuntu22.04-v1.4"
-
+    environment={
+        "HF_MODEL_ID": "openai/whisper-small",
+        #"HF_MODEL_ID": "openai/whisper-tiny",
+        "HF_TASK": "automatic-speech-recognition"
+        }
     )
 )
 
@@ -43,7 +47,7 @@ sagemaker_model = aws.sagemaker.Model(
 sagemaker_endpoint_configuration = aws.sagemaker.EndpointConfiguration(
     "sagemakerendpointconfiguration",
     production_variants=[aws.sagemaker.EndpointConfigurationProductionVariantArgs(
-    instance_type="ml.m5.large",
+    instance_type="ml.g4dn.xlarge",
     model_name=sagemaker_model.name,
     variant_name="default",
     initial_instance_count=1, 
