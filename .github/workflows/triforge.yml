@@ -61,7 +61,7 @@ jobs:
 
       - name: Deploy Terraform
         run: |
-          cd ../compute/
+          cd compute
           terraform init 
           terraform plan 
           terraform apply --auto-approve
