@@ -121,6 +121,7 @@ jobs:
 
             echo "Setup flask"
             sudo apt install -y python3-pip
+            cd /home/ubuntu/Triforge/ui/proxy
             python3 -m pip install -r requirements.txt --break-system-packages  
             nohup python3 app.py > /tmp/flask.log 2>&1 &
 
