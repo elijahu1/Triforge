@@ -58,9 +58,9 @@ cd compute && tf init && tf apply
 # 4. UI runs via CI/CD on push to main
 ```
 
-## Blog
+## Links
 
-*Blog @ [triforge](https://dub.sh/triforge)*
+*Blog @ [Triforge](https://dub.sh/triforge)*
 
 *Github @ [Triforge-Code](https://git.new/triforge)*
 
