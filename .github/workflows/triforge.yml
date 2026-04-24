@@ -55,6 +55,7 @@ jobs:
           pulumi login 's3://remote-state-h1?region=us-east-1'
           cd sagemkaer
           pulumi stack select dev
+          pip install -r sagemkaer/requirements.txt
           pulumi up --yes
 
       - name: Deploy Terraform
