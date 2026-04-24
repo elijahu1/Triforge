@@ -117,7 +117,8 @@ jobs:
             cd Triforge
 
             echo "Fetching latest changes"
-            git pull origin main
+            git -C /home/ubuntu/Triforge checkout -- .
+            git -C /home/ubuntu/Triforge pull origin main
 
             echo "Setup flask"
             sudo apt install -y python3-pip
