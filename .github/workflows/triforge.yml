@@ -119,6 +119,11 @@ jobs:
             echo "Fetching latest changes"
             git pull origin main
 
+            echo "Setup flask"
+            cd ui/proxy
+            pip3 install -r requirements.txt
+            nohup python3 app.py &
+
             echo "Setting up nginx config and linking"
             sudo cp /home/ubuntu/Triforge/ui/triforge.nginx.conf /etc/nginx/sites-available/triforge
             sudo ln -sf /etc/nginx/sites-available/triforge /etc/nginx/sites-enabled/
