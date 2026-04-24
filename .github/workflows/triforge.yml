@@ -120,9 +120,9 @@ jobs:
             git pull origin main
 
             echo "Setup flask"
-            cd ui/proxy
-            pip3 install -r requirements.txt
-            nohup python3 app.py &
+            cd /home/ubuntu/Triforge/ui/proxy
+            python3 -m pip install -r requirements.txt
+            nohup python3 app.py > /tmp/flask.log 2>&1 &
 
             echo "Setting up nginx config and linking"
             sudo cp /home/ubuntu/Triforge/ui/triforge.nginx.conf /etc/nginx/sites-available/triforge
