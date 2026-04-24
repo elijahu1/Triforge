@@ -2,11 +2,9 @@
 ---
 
 # Triforge
-
-> Multi-tool IaC pipeline deploying Whisper AI inference on AWS using Pulumi, Terraform, and OpenTofu across isolated infrastructure layers.
+> Multi-tool IaC pipeline deploying a translation AI inference endpoint on AWS using Pulumi, Terraform, and OpenTofu across isolated infrastructure layers.
 
 ## Architecture
-
 ```
 Pulumi (Python)     → SageMaker endpoint + IAM + Secrets Manager
 Terraform (HCL)     → EC2 instance + Security Groups
@@ -16,17 +14,15 @@ Flask (Python)      → Proxy server bridging UI ↔ SageMaker
 
 **State backend:** S3 (`remote-state-h1`)  
 **Config passing:** AWS Secrets Manager → Flask → UI  
-**Model:** [`openai/whisper-small`](https://huggingface.co/openai/whisper-small) via HuggingFace inference container
+**Model:** [`Helsinki-NLP/opus-mt-en-mul`](https://huggingface.co/Helsinki-NLP/opus-mt-en-mul) via HuggingFace inference container
 
 ## Why 3 Tools?
-
 Each tool owns a layer that suits its philosophy:
 - **Pulumi** — Python flexibility for SageMaker's complex conditional resources
 - **Terraform** — battle-tested HCL for standard compute provisioning
 - **OpenTofu** — FOSS Terraform fork managing shared state infrastructure (i honestly just wanted to try it out as it looked kinda cool)
 
 ## Structure
-
 ```
 triforge/
 ├── sagemkaer/        # Pulumi — SageMaker + Secrets
@@ -38,13 +34,11 @@ triforge/
 ```
 
 ## Prerequisites
-
 - AWS CLI configured
 - Pulumi CLI, Terraform, OpenTofu installed
 - Python 3.10+, pip
 
 ## Deploy
-
 ```bash
 # 1. Storage (OpenTofu)
 cd storage && tofu init && tofu apply
@@ -59,12 +53,10 @@ cd compute && tf init && tf apply
 ```
 
 ## Links
+*Blog @ [Triforge](https://dub.sh/triforge)*  
 
-*Blog @ [Triforge](https://dub.sh/triforge)*
+*Github @ [Triforge-Code](https://git.new/triforge)*  
 
-*Github @ [Triforge-Code](https://git.new/triforge)*
-
-*AI Chat interface @ [Triforge-chat](https://chat.elijahu.me)*
+*Live @ [Triforge-chat](https://chat.elijahu.me)*
 
 ---
-

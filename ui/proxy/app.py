@@ -33,20 +33,16 @@ def invoke():
     endpoint_name = get_config()
     payload = request.get_json(silent=True) or {}
     
-    # decode base64 back to raw audio bytes
-    import base64
-    audio_bytes = base64.b64decode(payload["audio"])
-    
     runtime = boto3.client("sagemaker-runtime", region_name=REGION)
     response = runtime.invoke_endpoint(
         EndpointName=endpoint_name,
-        ContentType="audio/wav",
+        ContentType="application/json",
         Accept="application/json",
-        Body=audio_bytes,
+        Body=json.dumps({"inputs": payload["text"]}).encode("utf-8"),
     )
     result = json.loads(response["Body"].read().decode("utf-8"))
-    transcript = result.get("text", "No transcription found")
-    return jsonify({"transcript": transcript})
+    translation = result[0].get("translation_text", "No translation found")
+    return jsonify({"translation": translation})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

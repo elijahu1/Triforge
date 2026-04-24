@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Whisper Transcriber</title>
+    <title>Triforge Translator</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -15,12 +15,13 @@
             <div class="chat-messages" id="chat-messages">
                 <div class="message ai-message">
                     <div class="message-content">
-                        👋 Welcome to Whisper Transcriber<br><br>
-                        Press and hold 🎤 to record your voice<br>
-                        Release to transcribe<br><br>
-                        <strong>Best accuracy:</strong> English<br>
-                        <strong>Also supported:</strong> French, Spanish, Arabic, and more<br><br>
-                        Your speech will be converted to text in seconds.
+                        👋 Welcome to Triforge Translator<br><br>
+                        Type any English text and get it translated.<br><br>
+                        <strong>Examples:</strong><br>
+                        <strong>Hello, how are you?</strong><br>
+                        <strong>Good morning, have a great day</strong><br>
+                        <strong>I love building things from scratch</strong><br><br>
+                        Supports French, Spanish, Arabic, Yoruba and more.
                     </div>
                 </div>
             </div>
@@ -29,21 +30,14 @@
                     <input
                         type="text"
                         id="message-input"
-                        placeholder="Or type your message here..."
+                        placeholder="Type in English..."
                         onkeypress="if(event.key==='Enter') sendMessage()"
                         autocomplete="off"
                         autocorrect="off"
                         autocapitalize="off"
                         spellcheck="false"
                     >
-                    <button class="mic-btn" id="mic-btn"
-                        onmousedown="startVoice()"
-                        onmouseup="stopVoice()"
-                        ontouchstart="event.preventDefault(); startVoice()"
-                        ontouchend="event.preventDefault(); stopVoice()">
-                        <span id="mic-icon">🎤</span>
-                    </button>
-                    <button class="send-btn" id="send-btn" onclick="sendMessage()">Send</button>
+                    <button class="send-btn" id="send-btn" onclick="sendMessage()">Translate</button>
                 </div>
             </div>
         </div>
