@@ -33,7 +33,6 @@ body {
     min-height: 0;
 }
 
-/* Status bar — always visible at top */
 .status-bar {
     background: #f0f4ff;
     border-bottom: 1px solid #e0e8ff;
@@ -59,7 +58,6 @@ body {
     color: #28a745;
 }
 
-/* Messages */
 .chat-messages {
     flex: 1;
     overflow-y: auto;
@@ -106,35 +104,6 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
-.message-content code {
-    background: rgba(0,0,0,0.08);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.85em;
-}
-
-.user-message .message-content code {
-    background: rgba(255,255,255,0.2);
-}
-
-.translation-result {
-    background: #f0f7ff;
-    border-left: 3px solid #667eea;
-    padding: 8px 10px;
-    margin-top: 8px;
-    border-radius: 4px;
-    font-size: 0.9em;
-}
-
-.audio-player {
-    margin-top: 10px;
-    width: 100%;
-    max-width: 280px;
-    display: block;
-}
-
-/* Input area */
 .chat-input-container {
     background: white;
     border-top: 1px solid #e8e8e8;
@@ -165,36 +134,6 @@ body {
     background: white;
 }
 
-.mic-btn {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    border-radius: 50%;
-    border: none;
-    background: #667eea;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    touch-action: none;
-    user-select: none;
-    transition: background 0.2s;
-}
-
-.mic-btn:active { background: #dc3545; }
-
-.mic-btn.recording {
-    background: #dc3545;
-    animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(220,53,69,0.7); }
-    50% { box-shadow: 0 0 0 8px rgba(220,53,69,0); }
-}
-
 .send-btn {
     padding: 11px 18px;
     background: #667eea;
@@ -211,98 +150,6 @@ body {
 .send-btn:active { background: #5568d3; }
 .send-btn:disabled { background: #ccc; cursor: not-allowed; }
 
-#lang-select {
-    padding: 11px 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 24px;
-    font-size: 15px;
-    font-weight: 600;
-    background: #f8f9fa;
-    color: #667eea;
-    outline: none;
-    cursor: pointer;
-    transition: border-color 0.2s;
-    appearance: none;
-    -webkit-appearance: none;
-    min-width: 100px;
-}
-
-#lang-select:focus {
-    border-color: #667eea;
-    background: white;
-}
-
-/* Clickable words */
-.clickable-word {
-    cursor: pointer;
-    padding: 1px 2px;
-    border-radius: 3px;
-    transition: background 0.15s;
-}
-
-.clickable-word:hover,
-.clickable-word:active {
-    background: rgba(102,126,234,0.15);
-    text-decoration: underline;
-}
-
-/* Translation dropdown */
-.translation-dropdown {
-    position: fixed;
-    background: white;
-    border: 2px solid #667eea;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    z-index: 9999;
-    min-width: 185px;
-    overflow: hidden;
-    animation: dropdownFade 0.15s ease-out;
-}
-
-@keyframes dropdownFade {
-    from { opacity: 0; transform: translateY(-6px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.dropdown-header {
-    padding: 10px 14px;
-    background: #667eea;
-    color: white;
-    font-weight: 600;
-    font-size: 0.85em;
-}
-
-.dropdown-option {
-    padding: 11px 14px;
-    cursor: pointer;
-    font-size: 0.95em;
-    border-bottom: 1px solid #f0f0f0;
-    transition: background 0.1s;
-}
-
-.dropdown-option:last-child { border-bottom: none; }
-.dropdown-option:hover { background: #f8f9fa; }
-.dropdown-option:active { background: #e9ecef; }
-
-/* CORS warning */
-.cors-warning {
-    background: #fff8f8;
-    border: 1px solid #f5c6cb;
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin-bottom: 10px;
-    font-size: 0.82em;
-}
-
-.cors-warning strong {
-    color: #dc3545;
-    display: block;
-    margin-bottom: 4px;
-}
-
-.cors-warning p { color: #666; line-height: 1.5; }
-
-/* Desktop */
 @media (min-width: 600px) {
     .container { padding: 20px; max-width: 680px; margin: 0 auto; }
     .message-content { max-width: 72%; }

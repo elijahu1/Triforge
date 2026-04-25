@@ -36,7 +36,7 @@ sagemaker_model = aws.sagemaker.Model(
     primary_container=aws.sagemaker.ModelPrimaryContainerArgs(
     image="763104351884.dkr.ecr.us-east-1.amazonaws.com/huggingface-pytorch-inference:2.1.0-transformers4.37.0-cpu-py310-ubuntu22.04-v1.4",
     environment={
-        "HF_MODEL_ID": "Helsinki-NLP/opus-mt-en-mul",
+        "HF_MODEL_ID": "Helsinki-NLP/opus-mt-en-es",
         #"HF_MODEL_ID": "openai/whisper-tiny",
         "HF_TASK": "translation",
         }
