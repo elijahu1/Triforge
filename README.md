@@ -5,10 +5,12 @@
 > Multi-tool IaC pipeline deploying an English to Spanish translation AI inference endpoint on AWS using Pulumi, Terraform, and OpenTofu across isolated infrastructure layers.
 
 ## Architecture
+```
 Pulumi (Python)     → SageMaker endpoint + IAM + Secrets Manager
 Terraform (HCL)     → EC2 instance + Security Groups
 OpenTofu (HCL)      → S3 remote state backend
 Flask (Python)      → Proxy server bridging UI ↔ SageMaker
+```
 
 **State backend:** S3 (`remote-state-h1`)  
 **Config passing:** AWS Secrets Manager → Flask → UI  
@@ -21,13 +23,15 @@ Each tool owns a layer that suits its philosophy:
 - **OpenTofu** — FOSS Terraform fork managing shared state infrastructure (i honestly just wanted to try it out as it looked kinda cool)
 
 ## Structure
+```
 triforge/
 ├── sagemkaer/        # Pulumi — SageMaker + Secrets
 ├── compute/          # Terraform — EC2
 ├── storage/          # OpenTofu — S3
 └── ui/
-├── proxy/        # Flask proxy app
-└── public/       # HTML/CSS/JS frontend
+    ├── proxy/        # Flask proxy app
+    └── public/       # HTML/CSS/JS frontend
+```
 
 ## Prerequisites
 - AWS CLI configured
@@ -56,4 +60,3 @@ cd compute && tf init && tf apply
 *Live @ [Triforge-chat](https://chat.elijahu.me)*
 
 ---
-
