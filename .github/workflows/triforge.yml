@@ -122,13 +122,8 @@ jobs:
             git -C /home/ubuntu/Triforge checkout -- .
             git -C /home/ubuntu/Triforge pull origin main
 
-            echo "Starting Flask"
-            pkill -f app.py || true
-            sleep 2
-            SECRET_NAME=$(aws secretsmanager list-secrets --region us-east-1 --query 'SecretList[?starts_with(Name, `secretResource`)].Name' --output text)
-            echo "SECRET_NAME=$SECRET_NAME python3 /home/ubuntu/Triforge/ui/proxy/app.py > /tmp/flask.log 2>&1" | at now
-            sleep 3
-            echo "Flask started with secret: $SECRET_NAME"
+            echo "restarting Flask"
+            sudo systemctl restart triforge
 
             echo "Setting up nginx config and linking"
             sudo cp /home/ubuntu/Triforge/ui/triforge.nginx.conf /etc/nginx/sites-available/triforge
