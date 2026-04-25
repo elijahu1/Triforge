@@ -63,14 +63,16 @@ sagemaker_endpoint = aws.sagemaker.Endpoint(
 
 )
 
+
 ## EXPORT Endpoint 
 pulumi.export( "endpoint", sagemaker_endpoint.name)
 
 ## AWS SECRET MANAGER
 secret_resource = aws.secretsmanager.Secret("secretResource",
     description="SageMaker Endpoint url",
-    recovery_window_in_days=7,
-    )
+    name="triforge-endpoint-secret",
+    recovery_window_in_days=0,
+)
 
 
 secret_version_resource = aws.secretsmanager.SecretVersion("secretVersionResource",
