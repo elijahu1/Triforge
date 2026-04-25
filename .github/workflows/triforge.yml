@@ -94,6 +94,8 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          request_pty: false
+          script_stop: false
           script: |
             echo "Updating system"
             sudo apt update -y
@@ -123,10 +125,8 @@ jobs:
             echo "Starting Flask"
             pkill -f app.py || true
             sleep 2
-            cd /home/ubuntu/Triforge/ui/proxy
             SECRET_NAME=$(aws secretsmanager list-secrets --region us-east-1 --query 'SecretList[?starts_with(Name, `secretResource`)].Name' --output text)
-            SECRET_NAME=$SECRET_NAME nohup python3 app.py > /tmp/flask.log 2>&1 &
-            disown
+            echo "SECRET_NAME=$SECRET_NAME python3 /home/ubuntu/Triforge/ui/proxy/app.py > /tmp/flask.log 2>&1" | at now
             sleep 3
             echo "Flask started with secret: $SECRET_NAME"
 
