@@ -121,7 +121,9 @@ jobs:
             git -C /home/ubuntu/Triforge pull origin main
 
             echo "Starting Flask"
-            sudo apt install -y awscli
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
             pkill -f app.py || true
             sleep 2
             cd /home/ubuntu/Triforge/ui/proxy

@@ -211,6 +211,27 @@ body {
 .send-btn:active { background: #5568d3; }
 .send-btn:disabled { background: #ccc; cursor: not-allowed; }
 
+#lang-select {
+    padding: 11px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 600;
+    background: #f8f9fa;
+    color: #667eea;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 100px;
+}
+
+#lang-select:focus {
+    border-color: #667eea;
+    background: white;
+}
+
 /* Clickable words */
 .clickable-word {
     cursor: pointer;
