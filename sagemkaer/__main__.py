@@ -58,6 +58,7 @@ sagemaker_endpoint_configuration = aws.sagemaker.EndpointConfiguration(
 
 sagemaker_endpoint = aws.sagemaker.Endpoint(
     "sagemakerendpoint",
+    name="triforge-whisper-endpoint",
     endpoint_config_name=sagemaker_endpoint_configuration.name
 
 )
