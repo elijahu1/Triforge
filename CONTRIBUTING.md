@@ -19,3 +19,7 @@ Thanks for your interest. Here's how it works:
 - Merging all 3 IaC tools into one — that defeats the purpose
 - Adding paid services without flagging cost implications
 
+## Wanna Reach out?
+
+hit me [hi@elijahu.me](mailto:hi@elijahu.me)
+
