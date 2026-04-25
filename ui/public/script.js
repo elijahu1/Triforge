@@ -27,6 +27,7 @@ function addMessage(content, type = 'ai') {
 // ==================== TRANSLATION ====================
 async function sendMessage() {
     const input = document.getElementById('message-input');
+    const lang = document.getElementById('lang-select').value;
     const text = input.value.trim();
     if (!text) return;
 
@@ -38,7 +39,7 @@ async function sendMessage() {
         const response = await fetch('/invoke', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text })
+            body: JSON.stringify({ text: `>>${lang}<< ${text}` })
         });
 
         if (!response.ok) throw new Error(`API error: ${response.status}`);
