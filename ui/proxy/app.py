@@ -21,12 +21,7 @@ def get_secret():
 
 
 def get_config():
-    global _secret_cache
-    if _secret_cache:
-        return _secret_cache
-    _secret_cache = get_secret()
-    return _secret_cache
-
+    return get_secret()
 
 @app.route("/invoke", methods=["POST"])
 def invoke():
