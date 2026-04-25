@@ -125,7 +125,8 @@ jobs:
             sleep 2
             cd /home/ubuntu/Triforge/ui/proxy
             SECRET_NAME=$(aws secretsmanager list-secrets --region us-east-1 --query 'SecretList[?starts_with(Name, `secretResource`)].Name' --output text)
-            SECRET_NAME=$SECRET_NAME setsid python3 app.py > /tmp/flask.log 2>&1 &
+            SECRET_NAME=$SECRET_NAME nohup python3 app.py > /tmp/flask.log 2>&1 &
+            disown
             sleep 3
             echo "Flask started with secret: $SECRET_NAME"
 
